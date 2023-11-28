@@ -1,0 +1,50 @@
+@import url(http://fonts.googleapis.com/css?family=Merriweather+Sans:300);
+@import url(http://fonts.googleapis.com/css?family=Merriweather+Sans:700);
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.form-container {
+    width: 70%;
+    margin: auto;
+    padding: 20px;
+}
+
+.step-container {
+    display: none;
+}
+
+.active-step {
+    display: block;
+
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: rgb(31, 111, 186);
+}
+button:hover{
+    background-color: rgb(161, 22, 122);
+}
+.options {
+    display: list-item;
+}
+.form-container{
+    border: groove rgb(16, 154, 136) 1em;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: medium;
+    display: grid;
+    -ms-grid-row-align: center 1fr;
+    background-color: rgb(220, 245, 229);
+}
+.step-container{
+    margin-bottom: .5em;
+}
+input{
+    margin-bottom: 1em;
+}

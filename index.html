@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de QR</title>
+ <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="form-container">
+    <!-- Paso 1: Formulario para introducir datos -->
+    <div class="step-container active-step" id="step1">
+        <h2>Paso 1: Introduce los datos para el QR</h2>
+        <form id="formStep1">
+            <label for="qrData">Datos para el QR:</label>
+         
+            <div class="option1"><input type="radio" name="option" value="option1"><input type="text" id="qrData" name="qrData">Introduce tus datos</div>
+           <div class="option2"><input type="radio" name="option" value="option2"><input type="file" name="qrImage" id="">Selecciona una imagen</div> 
+            <div class="option3"><input type="radio" name="option" value="option3"><input type="url" name="qrUrl" id="">Introduce la dirección URL  </div>
+           <div class="option4"><input type="radio" name="option" value="option4"><input type="text" name="qrText" id="">Introduce un texto</div> 
+    
+                         
+         
+            <div>
+             <button type="button" onclick="nextStep(2)">Siguiente</button>   
+            </div>
+        </form>
+    </div>
+
+    <!-- Paso 2: Elegir el color del QR -->
+    <div class="step-container" id="step2">
+        <h2>Paso 2: Elige el color para el QR</h2>
+        <form id="formStep2">
+            <label for="qrColor">Color para el QR:</label>
+            <input type="color" id="qrColor" name="qrColor" required>
+            <div>
+            <button type="button" onclick="prevStep(1)">Atrás</button> 
+            <button type="button" onclick="nextStep(3)">Siguiente</button>
+            </div>
+         
+        </form>
+    </div>
+
+    <!-- Paso 3: Elegir el tamaño y calidad del QR -->
+    <div class="step-container" id="step3">
+        <h2>Paso 3: Elige el tamaño y la calidad del QR</h2>
+        <form id="formStep3">
+            <label for="qrSize">Tamaño del QR:</label>
+            <input type="number" id="qrSize" name="qrSize" required>
+            <label for="qrQuality">Calidad del QR:</label>
+            <input type="range" id="qrQuality" name="qrQuality" min="1" max="100" required>
+           <div>
+            <button type="button" onclick="prevStep(2)">Atrás</button> 
+            <button type="button" onclick="nextStep(4)">Siguiente</button>
+            
+           </div>
+           
+        </form>
+    </div>
+
+    <!-- Paso 4: Descargar el QR generado -->
+    <div class="step-container" id="step4">
+        <h2>Paso 4: Descargar el QR generado</h2>
+        <p>¡QR generado con éxito!</p>
+        <div>
+        <button type="button" onclick="prevStep(3)">Atrás</button>   
+        <button onclick="downloadQR()">Descargar QR</button>
+        
+        </div>
+
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="https://cdn.rawgit.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
+<script src="qrcode.min.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
